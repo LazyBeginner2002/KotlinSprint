@@ -6,5 +6,5 @@ fun main() {
     val minute = (seconds - (hour * 3600)) / 60
     val second = seconds - (hour * 3600) - (minute * 60)
 
-    println("Время, которое Гагарин провел в космосе: 0$hour:$minute:0$second")
+    println(String.format("Время, которое Гагарин провел в космосе: %02d:%02d:%02d", hour, minute, second))
 }
