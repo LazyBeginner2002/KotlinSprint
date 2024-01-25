@@ -1,7 +1,7 @@
 package org.example.lesson_4
 
 fun main() {
-    val dayNumber = 4u
+    val dayNumber = 5u
     val arms = true
     val legs = false
     val back = false
@@ -9,21 +9,24 @@ fun main() {
 
     val isEven = dayNumber % 2u == 0u
 
-    if (!isEven) {
-        println("""
-        Упражнения для рук: $arms
-        Упражнения для ног: $legs
-        Упражнения для спины: $back
-        Упражнения для пресса: $absMuscles
-    """.trimIndent())
-    } else {
-        println("""
-        Упражнения для рук: ${!arms}
-        Упражнения для ног: ${!legs}
-        Упражнения для спины: ${!back}
-        Упражнения для пресса: ${!absMuscles}
-    """.trimIndent())
+    var printArms = arms
+    var printLegs = legs
+    var printBack = back
+    var printAbsMuscles = absMuscles
+
+    if (isEven) {
+        printArms = !printArms
+        printLegs = !printLegs
+        printBack = !printBack
+        printAbsMuscles = !printAbsMuscles
     }
+
+    println("""
+        Упражнения для рук: $printArms
+        Упражнения для ног: $printLegs
+        Упражнения для спины: $printBack
+        Упражнения для пресса: $printAbsMuscles
+    """.trimIndent())
 }
 
 
