@@ -21,12 +21,14 @@ fun main() {
         printAbsMuscles = !printAbsMuscles
     }
 
-    println("""
+    println(
+        """
         Упражнения для рук: $printArms
         Упражнения для ног: $printLegs
         Упражнения для спины: $printBack
         Упражнения для пресса: $printAbsMuscles
-    """.trimIndent())
+    """.trimIndent()
+    )
 }
 
 
