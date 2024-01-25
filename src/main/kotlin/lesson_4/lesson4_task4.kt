@@ -1,28 +1,30 @@
 package org.example.lesson_4
 
 fun main() {
-    val dayNumber = 2
-    val arms: Boolean
-    val legs: Boolean
-    val back: Boolean
-    val absMuscles: Boolean
+    val dayNumber = 4u
+    val arms = true
+    val legs = false
+    val back = false
+    val absMuscles = true
 
-    if (dayNumber % 2 == 1){
-        arms = true
-        legs = false
-        back = false
-        absMuscles = true
-    } else {
-        arms = false
-        legs = true
-        back = true
-        absMuscles = false
-    }
+    val isEven = dayNumber % 2u == 0u
 
-    println("""
+    if (!isEven) {
+        println("""
         Упражнения для рук: $arms
         Упражнения для ног: $legs
         Упражнения для спины: $back
         Упражнения для пресса: $absMuscles
     """.trimIndent())
+    } else {
+        println("""
+        Упражнения для рук: ${!arms}
+        Упражнения для ног: ${!legs}
+        Упражнения для спины: ${!back}
+        Упражнения для пресса: ${!absMuscles}
+    """.trimIndent())
+    }
 }
+
+
+
