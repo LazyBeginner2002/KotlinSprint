@@ -19,4 +19,6 @@ fun main() {
     } else {
         println("Неудача!")
     }
+
+    println("Выигрышными числами являлись: $firstWinNumber и $secondWinNumber")
 }
