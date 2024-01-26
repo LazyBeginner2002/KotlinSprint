@@ -1,9 +1,11 @@
 package org.example.lesson_5
 
 fun main() {
-    print("Доброго времени суток!\nДля входа в программу пройдите нашу имитацию капчи:\n17 + 34 = ")
+    val firstTerm = 17
+    val secondTerm = 34
+    print("Доброго времени суток!\nДля входа в программу пройдите нашу имитацию капчи:\n$firstTerm + $secondTerm = ")
     val answer = readln().toInt()
-    if (answer == 51) {
+    if (answer == firstTerm + secondTerm) {
         println("Добро пожаловать!")
     } else {
         println("Доступ запрещен.")
