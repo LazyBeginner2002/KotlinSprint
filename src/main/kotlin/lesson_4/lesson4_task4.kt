@@ -1,18 +1,14 @@
 package org.example.lesson_4
 
 fun main() {
-    val dayNumber = 5u
-    val arms = true
-    val legs = false
-    val back = false
-    val absMuscles = true
+    val dayNumber = 2u
 
     val isEven = dayNumber % 2u == 0u
 
-    var printArms = arms
-    var printLegs = legs
-    var printBack = back
-    var printAbsMuscles = absMuscles
+    var printArms = true
+    var printLegs = false
+    var printBack = false
+    var printAbsMuscles = true
 
     if (isEven) {
         printArms = !printArms
@@ -23,7 +19,7 @@ fun main() {
 
     println(
         """
-        Упражнения для рук: $printArms
+        Упражнения для рук: $printArms 
         Упражнения для ног: $printLegs
         Упражнения для спины: $printBack
         Упражнения для пресса: $printAbsMuscles
