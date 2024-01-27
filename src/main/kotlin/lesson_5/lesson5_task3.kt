@@ -14,7 +14,7 @@ fun main() {
         } else {
             println("Вы выиграли утешительный приз!")
         }
-    } else if((secondNumber == firstWinNumber) or (secondNumber == secondWinNumber)){
+    } else if ((secondNumber == firstWinNumber) or (secondNumber == secondWinNumber)) {
         println("Вы выиграли утешительный приз!")
     } else {
         println("Неудача!")
