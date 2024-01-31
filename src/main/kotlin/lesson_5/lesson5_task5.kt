@@ -14,11 +14,9 @@ fun main() {
 
     val userNumbers = listOf(firstNumber, secondNumber, thirdNumber)
 
-    val winUserNumbers = userNumbers.intersect(winNumbers) // <- предлагает конвертировать в Set, т.к. порядок не важен
+    val winUserNumbers = userNumbers.intersect(winNumbers.toSet()).size
 
-    val amountOfWinUserNumbers = winUserNumbers.size
-
-    val winMessage = when (amountOfWinUserNumbers) {
+    val winMessage = when (winUserNumbers) {
         1 -> "Вы выиграли утешительный приз. Поздравляем!"
         2 -> "Поздравляем! Вы выиграли крупный приз!"
         3 -> "Поздравляем! Вы выграли джекпот!"
