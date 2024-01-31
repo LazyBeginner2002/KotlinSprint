@@ -9,12 +9,12 @@ fun main() {
     val secondNumber = readln().toUByte()
 
     when {
-        ((firstNumber == firstWinNumber) || (firstNumber == secondWinNumber)
-                && (secondNumber == firstWinNumber) || (secondNumber == secondWinNumber))
+        (((firstNumber == firstWinNumber) || (firstNumber == secondWinNumber))
+                && ((secondNumber == firstWinNumber) || (secondNumber == secondWinNumber)))
         -> println("Поздравляем! Вы выиграли главный приз!")
 
-        ((firstNumber == firstWinNumber) || (firstNumber == secondWinNumber)
-                || (secondNumber == firstWinNumber) || (secondNumber == secondWinNumber))
+        (((firstNumber == firstWinNumber) || (firstNumber == secondWinNumber))
+                || ((secondNumber == firstWinNumber) || (secondNumber == secondWinNumber)))
         -> println("Вы выиграли утешительный приз!")
 
         else -> println("Неудача!")
