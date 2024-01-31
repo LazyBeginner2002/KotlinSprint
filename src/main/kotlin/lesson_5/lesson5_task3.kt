@@ -8,16 +8,16 @@ fun main() {
     val firstNumber = readln().toUByte()
     val secondNumber = readln().toUByte()
 
-    if ((firstNumber == firstWinNumber) || (firstNumber == secondWinNumber)
-        && (secondNumber == firstWinNumber) || (secondNumber == secondWinNumber)
-    ) {
-        println("Поздравляем! Вы выиграли главный приз!")
-    } else if ((firstNumber == firstWinNumber) || (firstNumber == secondWinNumber)
-        || (secondNumber == firstWinNumber) || (secondNumber == secondWinNumber)
-    ) {
-        println("Вы выиграли утешительный приз!")
-    } else {
-        println("Неудача!")
+    when {
+        ((firstNumber == firstWinNumber) || (firstNumber == secondWinNumber)
+                && (secondNumber == firstWinNumber) || (secondNumber == secondWinNumber))
+        -> println("Поздравляем! Вы выиграли главный приз!")
+
+        ((firstNumber == firstWinNumber) || (firstNumber == secondWinNumber)
+                || (secondNumber == firstWinNumber) || (secondNumber == secondWinNumber))
+        -> println("Вы выиграли утешительный приз!")
+
+        else -> println("Неудача!")
     }
 
     println("Выигрышными числами являлись: $firstWinNumber и $secondWinNumber")
