@@ -10,7 +10,6 @@ fun main() {
     val password = readln()
     println("Повторите пароль: ")
     var repeatPassword = readln()
-
     while (repeatPassword != password) {
         println("Неверный пароль. Попробуйте еще раз.")
         repeatPassword = readln()
