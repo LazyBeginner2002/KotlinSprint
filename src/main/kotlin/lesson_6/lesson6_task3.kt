@@ -6,7 +6,7 @@ fun main() {
 
     var counter = 0
     while (counter < seconds) {
-        println("Осталось секунд ${seconds-counter}")
+        println("Осталось секунд ${seconds - counter}")
         Thread.sleep(1000)
         counter++
     }
