@@ -12,5 +12,5 @@ fun main() {
         password.append(characters.random())
     }
 
-    println("Ваш пароль: $password")
+    println("password: $password")
 }
