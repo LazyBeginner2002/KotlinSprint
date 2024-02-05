@@ -1,7 +1,7 @@
 package org.example.lesson_9
 
 fun main() {
-    val quantityOfIngredientsForOneDish = mutableListOf(2, 50, 15)
+    val quantityOfIngredientsForOneDish = listOf(2, 50, 15)
 
     println("Сколько порций блюда требуется?")
     val numberOfDishes = readln().toInt()
