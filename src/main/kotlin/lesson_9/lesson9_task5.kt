@@ -1,8 +1,10 @@
 package org.example.lesson_9
 
 fun main() {
+    val numberOfIngredients = 5
+
     val userIngredients = mutableListOf("")
-    for (i in 1..5) {
+    repeat(numberOfIngredients) {
         userIngredients.add(readln())
     }
 
