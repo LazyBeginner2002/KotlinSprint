@@ -8,5 +8,5 @@ fun main() {
         totalViews += i
     }
 
-    println(totalViews)
+    println("Общее кол-во просмотров: $totalViews")
 }
