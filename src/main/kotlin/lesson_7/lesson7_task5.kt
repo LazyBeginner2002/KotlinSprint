@@ -1,8 +1,12 @@
 package org.example.lesson_7
 
 fun main() {
-    val passwordLength = readln().toInt()
-    val password = StringBuilder()
+    var passwordLength: Int
+    do {
+        passwordLength = readln().toInt()
+    } while (passwordLength < 6)
+
+    var password = StringBuilder()
     val lowerCase = 'a'..'z'
     val upperCase = 'A'..'Z'
     val numbers = '0'..'9'
