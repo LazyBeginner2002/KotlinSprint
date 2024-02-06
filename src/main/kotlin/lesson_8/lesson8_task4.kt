@@ -4,8 +4,7 @@ fun main() {
     val ingredients = arrayOf("Куриная грудка", "Масло", "Помидоры", "Лук", "Зелень", "Майонез", "Соль", "Перец")
     for (i in ingredients) print("$i ")
 
-    println()
-    println("Какой ингредиент вы хотите заменить?")
+    println("\nКакой ингредиент вы хотите заменить?")
     val oldIngredient = readln()
 
     if (ingredients.contains(oldIngredient)) {
