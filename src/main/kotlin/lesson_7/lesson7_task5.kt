@@ -1,14 +1,17 @@
 package org.example.lesson_7
 
-import kotlin.random.Random
-
 fun main() {
-    val minPasswordLength = 6
-    val maxPasswordLength = readln().toInt()
+    val passwordLength = readln().toInt()
     val password = StringBuilder()
-    val characters = ('a'..'z') + ('A'..'Z') + ('0'..'9')
+    val lowerCase = 'a'..'z'
+    val upperCase = 'A'..'Z'
+    val numbers = '0'..'9'
+    val characters: List<Char> = lowerCase + upperCase + numbers
+    password.append(lowerCase.random())
+    password.append(upperCase.random())
+    password.append(numbers.random())
 
-    for (i in 1..Random.nextInt(minPasswordLength, maxPasswordLength)) {
+    for (i in 1..passwordLength-3) {
         password.append(characters.random())
     }
 
