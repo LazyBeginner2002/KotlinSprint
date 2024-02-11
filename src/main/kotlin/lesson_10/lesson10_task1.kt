@@ -4,10 +4,10 @@ import kotlin.random.Random
 
 fun main() {
     do {
-        val humanScore = rollDice()
+        val humanScore = rollTheDice()
         println("Ход человека...\nВыпавшее число: $humanScore\n")
 
-        val robotScore = rollDice()
+        val robotScore = rollTheDice()
         println("Ход робота...\nВыпавшее число: $robotScore\n")
 
         println(
@@ -23,6 +23,6 @@ fun main() {
     } while (playNextRound)
 }
 
-fun rollDice(): Int {
+fun rollTheDice(): Int {
     return Random.nextInt(1, 6)
 }
