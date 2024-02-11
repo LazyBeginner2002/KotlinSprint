@@ -17,13 +17,13 @@ fun main() {
 
     println(
         """
-        User1 properties:
+        User 1 properties:
         id: ${user1.id}
         login: ${user1.login}
         password: ${user1.password}
         e-mail: ${user1.eMail}
         
-        User2 properties:
+        User 2 properties:
         id: ${user2.id}
         login: ${user2.login}
         password: ${user2.password}
