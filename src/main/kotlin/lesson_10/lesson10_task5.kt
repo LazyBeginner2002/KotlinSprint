@@ -6,7 +6,7 @@ fun main() {
     val login = "SomeLogin"
     val password = "SomePassword"
 
-    val token = authentication(login, password)
+    val token = authenticateAccount(login, password)
     if (token == null) println("Ошибка при авторизации") else println(showBasket(token))
 }
 
