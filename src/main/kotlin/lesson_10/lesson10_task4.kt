@@ -33,7 +33,7 @@ fun rollDice(): Int {
     return Random.nextInt(1, 6)
 }
 
-fun nextRound() : Boolean {
+fun nextRound(): Boolean {
     println("\nХотите бросить кости еще раз? Введите \"Да\" или \"Нет\"")
     val answer = readln()
 
