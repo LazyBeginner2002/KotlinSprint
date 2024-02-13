@@ -11,18 +11,19 @@ fun main() {
 }
 
 fun authenticateAccount(login: String, password: String): String? {
-    val lowerCase = 'a'..'z'
-    val upperCase = 'A'..'Z'
-    val numbers = '0'..'9'
-    val characters = lowerCase + upperCase + numbers
+    if (login.count() < MIN_DATA_LENGTH || password.count() < MIN_DATA_LENGTH) return null
+    else {
+        val lowerCase = 'a'..'z'
+        val upperCase = 'A'..'Z'
+        val numbers = '0'..'9'
+        val characters = lowerCase + upperCase + numbers
 
-    if (login.count() >= MIN_DATA_LENGTH && password.count() >= MIN_DATA_LENGTH) {
         val token = StringBuilder()
         repeat(32) {
             token.append(characters.random())
         }
         return token.toString()
-    } else return null
+    }
 }
 
 fun showBasket(token: String): List<String> {
