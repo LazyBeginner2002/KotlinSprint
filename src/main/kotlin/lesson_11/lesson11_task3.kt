@@ -7,7 +7,7 @@ fun main() {
     val user1 = User("*Ссылка на drawable resource*", "David", "${userStatus[1]}")
     user1.showInfo()
     room1.addMember(user1)
-    room1.updateStatus("David", "${userStatus[2]}")
+    room1.updateStatus("Davidd", "${userStatus[2]}")
     user1.showInfo()
 }
 
@@ -21,7 +21,10 @@ class Room(
     }
 
     fun updateStatus(nickname: String, newStatus: String) {
-        listOfMembers.find { it.nickname == nickname }!!.status = newStatus
+        if (listOfMembers.find { it.nickname == nickname } == null) println("\nПользователь не найден.\n")
+        else {
+            listOfMembers.find { it.nickname == nickname }!!.status = newStatus
+        }
     }
 }
 
