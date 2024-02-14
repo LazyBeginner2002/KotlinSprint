@@ -21,10 +21,9 @@ class Room(
     }
 
     fun updateStatus(nickname: String, newStatus: String) {
-        if (listOfMembers.find { it.nickname == nickname } == null) println("\nПользователь не найден.\n")
-        else {
-            listOfMembers.find { it.nickname == nickname }?.status = newStatus
-        }
+        listOfMembers.find { it.nickname == nickname }
+            ?.apply { status = newStatus }
+            ?: println("\nПользователь не найден.\n")
     }
 }
 
