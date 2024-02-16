@@ -17,16 +17,18 @@ class Forum(
 ) {
     private var userId = 0
     fun createNewUser(userName: String): ForumUser {
-        listOfUsers.add(ForumUser(userId, userName))
-        return listOfUsers[userId].also { userId++ }
+        val forumUser = ForumUser(userId, userName)
+        listOfUsers.add(forumUser)
+        return forumUser.also { userId++ }
     }
 
     fun createNewMessage(id: Int): ForumMessage? {
         listOfUsers.find { it.userId == id }
         println("Введите сообщение:")
         val message = readln()
-        listOfMessages.add(ForumMessage(id, message))
-        return listOfMessages.find { it.authorId == id }
+        val forumMessage = ForumMessage(id, message)
+        listOfMessages.add(forumMessage)
+        return forumMessage
     }
 
     fun printThread() {
