@@ -22,13 +22,15 @@ class Forum(
         return forumUser.also { userId++ }
     }
 
-    fun createNewMessage(id: Int): ForumMessage {
-        listOfUsers.find { it.userId == id }
+    fun createNewMessage(id: Int): ForumMessage? {
+        if (listOfUsers.find { it.userId == id } == null) return null
+        else {
         println("Введите сообщение:")
         val message = readln()
         val forumMessage = ForumMessage(id, message)
         listOfMessages.add(forumMessage)
         return forumMessage
+            }
     }
 
     fun printThread() {
