@@ -22,7 +22,7 @@ class Forum(
         return forumUser.also { userId++ }
     }
 
-    fun createNewMessage(id: Int): ForumMessage? {
+    fun createNewMessage(id: Int): ForumMessage {
         listOfUsers.find { it.userId == id }
         println("Введите сообщение:")
         val message = readln()
