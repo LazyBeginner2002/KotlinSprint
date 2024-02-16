@@ -2,12 +2,12 @@ package org.example.lesson_11
 
 fun main() {
     val forum1 = Forum()
-    forum1.createNewUser("David")
-    forum1.createNewUser("Ivan")
-    forum1.createNewMessage(0)
-    forum1.createNewMessage(0)
-    forum1.createNewMessage(1)
-    forum1.createNewMessage(1)
+    val forumUser1 = forum1.createNewUser("David")
+    val forumUser2 = forum1.createNewUser("Ivan")
+    forum1.createNewMessage(forumUser1.userId)
+    forum1.createNewMessage(forumUser1.userId)
+    forum1.createNewMessage(forumUser2.userId)
+    forum1.createNewMessage(forumUser2.userId)
     forum1.printThread()
 }
 
@@ -17,19 +17,16 @@ class Forum(
 ) {
     private var userId = 0
     fun createNewUser(userName: String): ForumUser {
-        userId++
         listOfUsers.add(ForumUser(userId, userName))
-        return ForumUser(userId, userName)
+        return listOfUsers[userId].also { userId++ }
     }
 
-    fun createNewMessage(userId: Int): ForumMessage? {
-        //if (listOfUsers.contains(ForumUser(userId, listOfUsers.find { it.userId == userId}.toString()))) {
-        if (listOfUsers.contains(listOfUsers[userId])) {
-            println("Введите сообщение:")
-            val message = readln()
-            listOfMessages.add(ForumMessage(userId, message))
-            return ForumMessage(userId, message)
-        } else return null
+    fun createNewMessage(id: Int): ForumMessage? {
+        listOfUsers.find { it.userId == id }
+        println("Введите сообщение:")
+        val message = readln()
+        listOfMessages.add(ForumMessage(id, message))
+        return listOfMessages.find { it.authorId == id }
     }
 
     fun printThread() {
