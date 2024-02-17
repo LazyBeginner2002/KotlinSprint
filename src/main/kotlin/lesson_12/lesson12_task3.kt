@@ -12,14 +12,14 @@ fun main() {
 }
 
 class TemperatureOfTheDayOfWeek(
-    _daytimeTemperature: Int,
-    _nightTemperature: Int,
-    _presenceOfPrecipitationDuringTheDay: Boolean,
+    daytimeTemperature: Int,
+    nightTemperature: Int,
+    presenceOfPrecipitationDuringTheDay: Boolean,
 ) {
 
-    val daytimeTemperature = _daytimeTemperature - DIFFERENCE_BETWEEN_KELVIN_AND_CELSIUS
-    val nightTemperature = _nightTemperature - DIFFERENCE_BETWEEN_KELVIN_AND_CELSIUS
-    val presenceOfPrecipitationDuringTheDay = _presenceOfPrecipitationDuringTheDay
+    private val daytimeTemperature = daytimeTemperature - DIFFERENCE_BETWEEN_KELVIN_AND_CELSIUS
+    private val nightTemperature = nightTemperature - DIFFERENCE_BETWEEN_KELVIN_AND_CELSIUS
+    private val presenceOfPrecipitationDuringTheDay = presenceOfPrecipitationDuringTheDay
 
     fun printTemperatureInfo() {
         println(
