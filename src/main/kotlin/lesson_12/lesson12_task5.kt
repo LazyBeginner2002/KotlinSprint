@@ -56,11 +56,7 @@ fun main() {
 }
 
 class TemperatureOfTheDayOfTheWeek(
-    _daytimeTemperature: Int,
-    _nightTemperature: Int,
-    _presenceOfPrecipitationDuringTheDay: Boolean,
-) {
-    val daytimeTemperature = _daytimeTemperature
-    val nightTemperature = _nightTemperature
-    val presenceOfPrecipitationDuringTheDay = _presenceOfPrecipitationDuringTheDay
-}
+    val daytimeTemperature: Int,
+    val nightTemperature: Int,
+    val presenceOfPrecipitationDuringTheDay: Boolean,
+)
