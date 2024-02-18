@@ -5,30 +5,16 @@ import kotlin.random.Random
 const val NUMBER_OF_DAYS_IN_MONTH = 30
 
 fun main() {
-    var daytimeTemperatureData = Random.nextInt(-30, 30)
-    var nightTemperatureData = Random.nextInt(-30, 30)
-    var presenceOfPrecipitationData = Random.nextBoolean()
+    val daysOfMonth = mutableListOf<TemperatureOfTheDayOfTheWeek>()
 
-    var dayOfMonth: TemperatureOfTheDayOfTheWeek
-
-    val daysOfMonth = mutableListOf(
-        TemperatureOfTheDayOfTheWeek(
-            daytimeTemperatureData,
-            nightTemperatureData,
-            presenceOfPrecipitationData
+    repeat(NUMBER_OF_DAYS_IN_MONTH) {
+        daysOfMonth.add(
+            TemperatureOfTheDayOfTheWeek(
+                Random.nextInt(-30, 30),
+                Random.nextInt(-30, 30),
+                Random.nextBoolean(),
+            )
         )
-    )
-
-    repeat(NUMBER_OF_DAYS_IN_MONTH - 1) {
-        daytimeTemperatureData = Random.nextInt(-30, 30)
-        nightTemperatureData = Random.nextInt(-30, 30)
-        presenceOfPrecipitationData = Random.nextBoolean()
-        dayOfMonth = TemperatureOfTheDayOfTheWeek(
-            daytimeTemperatureData,
-            nightTemperatureData,
-            presenceOfPrecipitationData
-        )
-        daysOfMonth.add(dayOfMonth)
     }
 
     val listOfDaytimeTemperature = mutableListOf(0)
@@ -49,10 +35,9 @@ fun main() {
     }
     daysWithPrecipitation.removeAt(0)
 
-    val averageDaytimeTemperatureOfMonth = listOfDaytimeTemperature.average().also { println(it) }
-    val averageNightTemperatureOfMonth = listOfNightTemperature.average().also { println(it) }
-    val numberOfDaysWithPrecipitation =
-        daysWithPrecipitation.count { it.presenceOfPrecipitationDuringTheDay }.also { println(it) }
+    listOfDaytimeTemperature.average().also { println(it) }
+    listOfNightTemperature.average().also { println(it) }
+    daysWithPrecipitation.count { it.presenceOfPrecipitationDuringTheDay }.also { println(it) }
 }
 
 class TemperatureOfTheDayOfTheWeek(
