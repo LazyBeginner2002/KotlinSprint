@@ -10,9 +10,9 @@ fun main() {
 }
 
 class TemperatureOfDayOfWeek(
-    private var daytimeTemperature: Byte,
-    private var nightTemperature: Byte,
-    private var presenceOfPrecipitationDuringTheDay: Boolean,
+    private val daytimeTemperature: Byte,
+    private val nightTemperature: Byte,
+    private val presenceOfPrecipitationDuringTheDay: Boolean,
 ) {
 
     fun printTemperatureInfo() {
