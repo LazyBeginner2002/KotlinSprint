@@ -21,12 +21,9 @@ fun main() {
 
     val listOfNightTemperature = daysOfMonth.map { it.nightTemperature }
 
-    val daysWithPrecipitation = mutableListOf<TemperatureOfTheDayOfTheWeek>()
-    daysOfMonth.forEach { if (it.presenceOfPrecipitationDuringTheDay) daysWithPrecipitation.add(it) }
-
     listOfDaytimeTemperature.average().also { println(it) }
     listOfNightTemperature.average().also { println(it) }
-    daysWithPrecipitation.count { it.presenceOfPrecipitationDuringTheDay }.also { println(it) }
+    daysOfMonth.filter { it.presenceOfPrecipitationDuringTheDay }.also { println(it.size) }
 }
 
 class TemperatureOfTheDayOfTheWeek(
