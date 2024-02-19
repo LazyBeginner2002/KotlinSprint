@@ -17,23 +17,12 @@ fun main() {
         )
     }
 
-    val listOfDaytimeTemperature = mutableListOf(0)
-    for (i in 0..<NUMBER_OF_DAYS_IN_MONTH) {
-        listOfDaytimeTemperature.add(daysOfMonth[i].daytimeTemperature)
-    }
-    listOfDaytimeTemperature.removeAt(0)
+    val listOfDaytimeTemperature = daysOfMonth.map { it.daytimeTemperature }
 
-    val listOfNightTemperature: MutableList<Int> = mutableListOf(0)
-    for (i in 0..<NUMBER_OF_DAYS_IN_MONTH) {
-        listOfNightTemperature.add(daysOfMonth[i].nightTemperature)
-    }
-    listOfNightTemperature.removeAt(0)
+    val listOfNightTemperature = daysOfMonth.map { it.nightTemperature }
 
-    val daysWithPrecipitation = mutableListOf(daysOfMonth[0])
-    for (i in 0..<NUMBER_OF_DAYS_IN_MONTH) {
-        if (daysOfMonth[i].presenceOfPrecipitationDuringTheDay) daysWithPrecipitation.add(daysOfMonth[i])
-    }
-    daysWithPrecipitation.removeAt(0)
+    val daysWithPrecipitation = mutableListOf<TemperatureOfTheDayOfTheWeek>()
+    daysOfMonth.forEach { if (it.presenceOfPrecipitationDuringTheDay) daysWithPrecipitation.add(it) }
 
     listOfDaytimeTemperature.average().also { println(it) }
     listOfNightTemperature.average().also { println(it) }
