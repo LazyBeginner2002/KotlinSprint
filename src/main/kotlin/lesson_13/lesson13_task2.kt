@@ -5,7 +5,11 @@ fun main() {
     phoneUser1.printInfoAboutPhoneUser()
 }
 
-class PhoneUsers(private val name: String, private val phoneNumber: Long, private val operatorCompany: String? = null) {
+class PhoneUsers(
+    private val name: String,
+    private val phoneNumber: Long,
+    private val operatorCompany: String? = null
+) {
     fun printInfoAboutPhoneUser() {
         val operator = operatorCompany ?: "<не указано>"
         println("- Имя: $name\n- Номер: $phoneNumber\n- Оператор: $operator")
