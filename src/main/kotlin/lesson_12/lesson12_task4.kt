@@ -1,6 +1,6 @@
 package org.example.lesson_12
 
-const val DIFFERENCE_BETWEEN_KELVIN_AND_CELSIUS_VALUES = 273
+const val DIFFERENCE_BETWEEN_KELVIN_AND_CELSIUS_VALUE = 273
 
 fun main() {
     val temperatureOfFriday = TemperatureOfTheDayOfAWeek(
@@ -16,8 +16,8 @@ class TemperatureOfTheDayOfAWeek(
     presenceOfPrecipitationDuringTheDay: Boolean,
 ) {
 
-    private val daytimeTemperature = daytimeTemperatureInKelvins - DIFFERENCE_BETWEEN_KELVIN_AND_CELSIUS_VALUES
-    private val nightTemperature = nightTemperatureInKelvin - DIFFERENCE_BETWEEN_KELVIN_AND_CELSIUS_VALUES
+    private val daytimeTemperature = daytimeTemperatureInKelvins - DIFFERENCE_BETWEEN_KELVIN_AND_CELSIUS_VALUE
+    private val nightTemperature = nightTemperatureInKelvin - DIFFERENCE_BETWEEN_KELVIN_AND_CELSIUS_VALUE
     private val presenceOfPrecipitation = presenceOfPrecipitationDuringTheDay
 
     init {
