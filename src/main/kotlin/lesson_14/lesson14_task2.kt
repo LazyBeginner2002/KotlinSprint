@@ -1,9 +1,9 @@
 package org.example.lesson_14
 
 fun main() {
-    val liner1 = Ship()
-    val cargoShip1 = CargoShip()
-    val iceBreaker1 = IceBreaker()
+    val liner1 = Ships()
+    val cargoShip1 = CargoShips()
+    val iceBreaker1 = IceBreakers()
     liner1.prepareForLoading()
     cargoShip1.prepareForLoading()
     iceBreaker1.prepareForLoading()
@@ -12,7 +12,7 @@ fun main() {
     iceBreaker1.printInfoAboutTheShip()
 }
 
-open class Ship(
+open class Ships(
     val name: String = "Лайнер",
     val speedLvl: Int = 2,
     val numberOfPassengersLvl: Int = 3,
@@ -34,12 +34,12 @@ open class Ship(
     }
 }
 
-class CargoShip(
+class CargoShips(
     name: String = "Грузовой корабль",
     speedLvl: Int = 1,
     numberOfPassengersLvl: Int = 2,
     carryingCapacityLvl: Int = 3,
-) : Ship(name, speedLvl, numberOfPassengersLvl, carryingCapacityLvl) {
+) : Ships(name, speedLvl, numberOfPassengersLvl, carryingCapacityLvl) {
     override fun prepareForLoading() {
         println("Погрузочный кран активирован")
     }
@@ -49,13 +49,13 @@ class CargoShip(
     }
 }
 
-class IceBreaker(
+class IceBreakers(
     name: String = "Ледокол",
     speedLvl: Int = 1,
     numberOfPassengersLvl: Int = 2,
     carryingCapacityLvl: Int = 1,
     val crushIce: Boolean = true
-) : Ship(name, speedLvl, numberOfPassengersLvl, carryingCapacityLvl) {
+) : Ships(name, speedLvl, numberOfPassengersLvl, carryingCapacityLvl) {
     override fun prepareForLoading() {
         println("Ворота со стороны кормы открыты")
     }
