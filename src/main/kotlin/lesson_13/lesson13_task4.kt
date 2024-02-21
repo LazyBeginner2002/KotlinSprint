@@ -1,20 +1,25 @@
 package org.example.lesson_13
 
-private val phoneBook = mutableListOf<TelephoneUsers>()
-
 fun main() {
+    val phoneBook = PhoneBook()
     val user1 = TelephoneUsers("David")
-    print("Введите номер телефона пользователя: ")
-    user1.phoneNumber = readln().toLongOrNull()
-    print("Введите компанию оператора пользователя: ")
-    user1.operatorCompany = readln()
-    addToPhoneBook(user1)
+    user1.fillInfoAboutUser()
+    phoneBook.addToPhoneBook(user1)
 }
 
-fun addToPhoneBook(user: TelephoneUsers) {
-    if (user.phoneNumber != null) phoneBook.add(user)
-    else println("\nТелефон пользователя не указан")
+class PhoneBook(private val phoneBook: MutableList<TelephoneUsers> = mutableListOf()) {
+    fun addToPhoneBook(user: TelephoneUsers) {
+        if (user.phoneNumber != null) phoneBook.add(user).also { println("\nПользователь добавлен в телефонную книгу") }
+        else println("\nТелефон пользователя не указан")
+    }
 }
 
-class TelephoneUsers(val name: String, var phoneNumber: Long? = null, var operatorCompany: String? = null)
+class TelephoneUsers(val name: String, var phoneNumber: Long? = null, private var operatorCompany: String? = null) {
+    fun fillInfoAboutUser() {
+        print("Введите номер телефона пользователя: ")
+        phoneNumber = readln().toLongOrNull()
+        print("Введите компанию оператора пользователя: ")
+        operatorCompany = readln()
+    }
+}
 
