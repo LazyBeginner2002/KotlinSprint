@@ -18,7 +18,7 @@ class CargoShip(
     speedLvl: Int = 1,
     numberOfPassengersLvl: Int = 2,
     carryingCapacityLvl: Int = 3,
-) : Ship()
+) : Ship(name, speedLvl, numberOfPassengersLvl, carryingCapacityLvl)
 
 class IceBreaker(
     name: String = "Ледокол",
@@ -26,4 +26,4 @@ class IceBreaker(
     numberOfPassengersLvl: Int = 2,
     carryingCapacityLvl: Int = 1,
     val crushIce: Boolean = true
-) : Ship()
+) : Ship(name, speedLvl, numberOfPassengersLvl, carryingCapacityLvl)
