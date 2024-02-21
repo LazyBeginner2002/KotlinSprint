@@ -17,3 +17,4 @@ fun addToPhoneBook(user: TelephoneUsers) {
 }
 
 class TelephoneUsers(val name: String, var phoneNumber: Long? = null, var operatorCompany: String? = null)
+
