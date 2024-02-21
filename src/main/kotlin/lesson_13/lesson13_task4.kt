@@ -14,7 +14,11 @@ class PhoneBook(private val phoneBook: MutableList<TelephoneUsers> = mutableList
     }
 }
 
-class TelephoneUsers(val name: String, var phoneNumber: Long? = null, private var operatorCompany: String? = null) {
+class TelephoneUsers(
+    val name: String,
+    var phoneNumber: Long? = null,
+    private var operatorCompany: String? = null
+) {
     fun fillInfoAboutUser() {
         print("Введите номер телефона пользователя: ")
         phoneNumber = readln().toLongOrNull()
@@ -22,4 +26,3 @@ class TelephoneUsers(val name: String, var phoneNumber: Long? = null, private va
         operatorCompany = readln()
     }
 }
-
