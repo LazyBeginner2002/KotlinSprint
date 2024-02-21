@@ -62,6 +62,6 @@ class IceBreakers(
 
     override fun printInfoAboutTheShip() {
         super.printInfoAboutTheShip()
-        println("Может ломать лед")
+        println("Может колоть лед")
     }
 }
