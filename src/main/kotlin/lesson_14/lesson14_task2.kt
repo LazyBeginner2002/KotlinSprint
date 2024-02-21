@@ -25,7 +25,7 @@ open class Ship(
     open fun printInfoAboutTheShip() {
         println(
             """
-            Название корабля: ${name}
+            Название корабля: $name
             Уровень скорости: $speedLvl
             Уровень вместимости пассажиров: $numberOfPassengersLvl
             Уровень грузоподъемности: $carryingCapacityLvl
