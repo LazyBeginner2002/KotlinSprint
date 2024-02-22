@@ -22,7 +22,7 @@ class Planet(
     name: String,
     atmosphere: Boolean,
     suitableForLanding: Boolean,
-    val satellites: MutableList<Satellite>,
+    private val satellites: MutableList<Satellite>,
 ) : HeavenlyBody(name, atmosphere, suitableForLanding) {
     fun printInfo() {
         println(
