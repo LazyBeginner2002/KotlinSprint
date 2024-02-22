@@ -30,7 +30,7 @@ class Planet(
             Название планеты: $name
             Наличие атмосферы у планеты $name: $atmosphere
             Пригодность для посадки на поверхность планеты $name: $suitableForLanding
-            Спутники планеты $name: ${satellites.forEach { println(it.name) }}
+            Спутники планеты $name: ${satellites.forEach { it.name }}
         """.trimIndent()
         )
     }
