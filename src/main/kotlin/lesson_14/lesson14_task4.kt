@@ -12,7 +12,7 @@ fun main() {
     planet1.printInfo()
 }
 
-open class HeavenlyBody(
+abstract class HeavenlyBody(
     val name: String,
     val atmosphere: Boolean,
     val suitableForLanding: Boolean,
